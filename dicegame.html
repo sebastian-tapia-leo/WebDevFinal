@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pyro Dice Challenge</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #121212;
+        color: white;
+        margin: 0;
+        padding: 50px;
+    }
+
+    h1 {
+        color: #ff4500;
+        font-size: 3rem;
+    }
+
+    .game-box {
+        max-width: 500px;
+        margin: auto;
+        background: #1e1e1e;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .dice {
+        font-size: 6rem;
+        margin: 20px 0;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        background-color: #ff4500;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ff6347;
+    }
+
+    a {
+        color: #ff4500;
+        display: block;
+        margin-top: 25px;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="game-box">
+    <h1>🎲 Pyro Dice Challenge</h1>
+    <p>Roll the dice and try to hit a 6!</p>
+
+    <div id="dice" class="dice">🎲</div>
+    <p id="result">Press roll to begin</p>
+
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <a href="FromScratch.html">← Back to From Scratch Page</a>
+</div>
+
+<script>
+function rollDice() {
+    let roll = Math.floor(Math.random() * 6) + 1;
+
+    document.getElementById("dice").textContent = roll;
+
+    if (roll === 6) {
+        document.getElementById("result").textContent = "🔥 JACKPOT! You rolled a 6!";
+    } else {
+        document.getElementById("result").textContent = "You rolled a " + roll + ". Try again!";
+    }
+}
+</script>
+
+</body>
+</html>
